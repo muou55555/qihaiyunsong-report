@@ -2,7 +2,7 @@
 
 export const surveyConfig = {
   title: "栖海澐颂小区电动自行车充电设施",
-  subtitle: "民意调查问卷数据分析报告",
+  subtitle: "民意调查问卷报告",
   version: "V1.0",
   surveyDate: "2026年4月14日",
   totalResponses: 213,
@@ -12,7 +12,7 @@ export const surveyConfig = {
     supportRate: "97.2%",
     ownershipRate: "80.8%",
     agreementRate: "99.53%",
-    keyMessage: "超99%业主支持红线外建设充电桩",
+    keyMessage: "超97%业主支持红线外建设充电桩",
   },
 };
 

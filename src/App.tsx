@@ -63,7 +63,8 @@ function App() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/10">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
+              <img src="/qihaiyunsong-report/logo.jpg" alt="栖海澐颂" className="w-10 h-10 rounded-full object-cover ring-2 ring-blue-500/50" />
               <Badge variant="secondary" className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white border-0">
                 V1.0
               </Badge>
@@ -145,7 +146,7 @@ function App() {
       <footer className="bg-slate-900/50 border-t border-white/10 py-8">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm text-white/70">
-            栖海澐颂小区电动自行车充电设施民意调查问卷数据分析报告
+            栖海澐颂小区电动自行车充电设施民意调查问卷报告
           </p>
           <p className="text-xs text-white/50 mt-2">
             V1.0 | 调查日期：2026年4月14日 | 有效问卷：213份
