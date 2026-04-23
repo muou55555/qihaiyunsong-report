@@ -6,6 +6,29 @@
 
 @layer base {
   :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 217.2 32.6% 17.5%;
+    --card-foreground: 210 40% 98%;
+    --popover: 217.2 32.6% 17.5%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 27.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 22.5%;
+    --muted-foreground: 215 20.2% 75%;
+    --accent: 217.2 32.6% 27.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 72.2% 50.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 25%;
+    --input: 217.2 32.6% 25%;
+    --ring: 212.7 26.8% 93.9%;
+    --radius: 0.75rem;
+  }
+
+  .light {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -25,29 +48,6 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 220 20% 10%;
-    --foreground: 210 40% 98%;
-    --card: 220 20% 14%;
-    --card-foreground: 210 40% 98%;
-    --popover: 220 20% 14%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
   }
 }
 
@@ -57,42 +57,71 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
 @layer components {
   .section-card {
-    @apply bg-card rounded-lg border shadow-sm transition-all hover:shadow-md;
+    @apply bg-card rounded-xl border border-border shadow-lg hover:shadow-2xl transition-all duration-300;
   }
   
   .data-card {
-    @apply bg-card/50 backdrop-blur-sm rounded-xl border p-6;
+    @apply bg-card/80 backdrop-blur-md rounded-xl border border-border p-6 shadow-md;
   }
   
   .stat-value {
-    @apply text-4xl font-bold tracking-tight;
+    @apply text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent;
   }
   
   .chart-container {
-    @apply w-full h-[300px] md:h-[350px] flex items-center justify-center;
+    @apply w-full h-[300px] md:h-[380px] flex items-center justify-center p-2;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent;
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
   }
 }
 
 /* 自定义滚动条 */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
   background: hsl(var(--muted));
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground));
-  border-radius: 4px;
+  background: linear-gradient(to bottom, hsl(var(--muted-foreground)), hsl(var(--muted)));
+  border-radius: 5px;
+  border: 2px solid hsl(var(--muted));
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--foreground));
+  background: linear-gradient(to bottom, hsl(var(--foreground)), hsl(var(--muted-foreground)));
+}
+
+/* 平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 选中文字样式 */
+::selection {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+::-moz-selection {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
 }

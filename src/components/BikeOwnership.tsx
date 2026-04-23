@@ -39,7 +39,7 @@ export function BikeOwnership() {
               </CardHeader>
               <CardContent>
                 <p className="text-2xl font-bold text-blue-700 dark:text-blue-400 mb-3">
-                  超8成家庭拥有电动自行车
+                  问卷中超8成家庭拥有电动自行车
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   属于刚性、高频、全民性民生需求，并非小众诉求。

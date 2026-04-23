@@ -1,4 +1,3 @@
-
 import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -49,12 +48,13 @@ export function BarChart({
         label: '户数',
         data: sortedData.map(d => d.count),
         backgroundColor: sortedData.map((_, i) => {
-          const opacity = 1 - (i * 0.15);
-          return color.replace(')', `, ${Math.max(opacity, 0.4)})`).replace('rgb', 'rgba');
+          const opacity = 1 - (i * 0.12);
+          return color.replace(')', `, ${Math.max(opacity, 0.5)})`).replace('rgb', 'rgba');
         }),
         borderColor: color,
-        borderWidth: 1,
-        borderRadius: 4,
+        borderWidth: 2,
+        borderRadius: 6,
+        hoverBackgroundColor: color,
       },
     ],
   };
@@ -70,17 +70,17 @@ export function BarChart({
       title: {
         display: !!title,
         text: title,
-        font: {
-          size: 16,
-          family: 'Plus Jakarta Sans',
-          weight: 'bold' as const,
-        },
+        color: 'rgba(255, 255, 255, 0.9)' as any,
+        padding: 20,
       },
       tooltip: {
+        backgroundColor: 'rgba(0, 0, 0, 0.85)' as any,
+        padding: 16,
+        cornerRadius: 8,
         callbacks: {
           label: function(context: any) {
             const item = sortedData[context.dataIndex];
-            return `${item.count}户 (${item.percentage}%)`;
+            return [` 数量: ${item.count}户`, ` 比例: ${item.percentage}%`];
           },
         },
       },
@@ -89,18 +89,18 @@ export function BarChart({
       x: {
         beginAtZero: true,
         grid: {
-          display: false,
+          color: 'rgba(255, 255, 255, 0.1)' as any,
+        },
+        ticks: {
+          color: 'rgba(255, 255, 255, 0.7)' as any,
         },
       },
       y: {
         grid: {
-          color: 'rgba(0, 0, 0, 0.05)',
+          color: 'rgba(255, 255, 255, 0.1)' as any,
         },
         ticks: {
-          font: {
-            size: 13,
-            family: 'Plus Jakarta Sans',
-          },
+          color: 'rgba(255, 255, 255, 0.7)' as any,
         },
       },
     },
