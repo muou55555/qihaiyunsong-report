@@ -81,7 +81,7 @@ export function ConstructionAttitude() {
               <div className="bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-900 rounded-lg p-4">
                 <h4 className="font-semibold text-green-700 dark:text-green-400 mb-2">结论</h4>
                 <p className="text-sm text-green-600 dark:text-green-300 leading-relaxed">
-                  97.2%业主压倒性支持红线外建设，0反对，形成全小区高度共识。
+                  97.2%业主压倒性支持红线外建设，形成全小区高度共识。
                   该方案是唯一能同时满足业主充电刚需、消防安全、居住品质的最优路径，
                   民意基础牢固、推进风险极低。
                 </p>

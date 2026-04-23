@@ -27,7 +27,6 @@ export const insideConstructionAttitude = [
 export const outsideConstructionAttitude = [
   { name: "支持", value: 207, percentage: 97.2, color: "#22c55e" },
   { name: "中立", value: 6, percentage: 2.8, color: "#94a3b8" },
-  { name: "反对", value: 0, percentage: 0, color: "#ef4444" },
 ];
 
 // 电动自行车保有量
